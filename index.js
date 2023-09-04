@@ -47,10 +47,47 @@ const questions = [
         name: "email",
         message: "What is your email address?",
     },
-    
-
-
 ];
+
+// Function to generate README content based on user responses
+function generateREADME(userResponses) {
+    // Construct the README content using template literals
+    const readmeContent = `
+  # ${userResponses.title}
+  
+  ## Description
+  ${userResponses.description}
+  
+  ## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+  
+  ## Installation
+  ${userResponses.install}
+  
+  ## Usage
+  ${userResponses.usage}
+  
+  ## License
+  This project is licensed under the ${userResponses.license} license.
+  
+  ## Contributing
+  ${userResponses.contributing}
+  
+  ## Tests
+  ${userResponses.tests}
+  
+  ## Questions
+  For questions or inquiries, you can reach me via [GitHub](https://github.com/${userResponses.github}) or by email at ${userResponses.email}.
+  `;
+  
+    return readmeContent;
+  }
+  
 
 // function to write README file
 function writeToFile(fileName, data) {
